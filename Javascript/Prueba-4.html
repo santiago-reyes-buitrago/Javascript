@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba 4</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <nav class="nav nav-tabs mt-2">
+        <a class="nav-link" href="Prueba-1.html">Prueba 1</a>
+        <a class="nav-link" href="Prueba-2.html">Prueba 2</a>
+        <a class="nav-link" href="Prueba-3.html">Prueba 3</a>
+        <a class="nav-link" href="Prueba-4.html">Prueba 4</a>
+    </nav>
+        <form>
+            <fieldset>
+            <legend>Calculadora</legend>
+            <div class="form-group">
+                <label for="numero1">Ingrese su numero</label>
+                <input type="text" id="numero1" class="form-control" minlength="1" maxlength="5" pattern="[0-9]+" required>
+            </div>
+            <div class="form-group">
+                <label for="numero2">Ingrese su numero</label>
+                <input type="text" id="numero2" class="form-control" minlength="1" maxlength="5" pattern="[0-9]+" required>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="suma">
+                <label class="form-check-label" for="suma">
+                    Suma
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="resta">
+                <label class="form-check-label" for="resta">
+                    Resta
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="multiplicar">
+                <label class="form-check-label" for="multiplicar">
+                    Multiplicacion
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="dividir">
+                <label class="form-check-label" for="dividir">
+                    Division
+                </label>
+            </div>
+            <br>
+            <div>
+                <button type="reset" class="btn btn-secondary">Borrar todo</button>
+                <button type="button" class="btn btn-primary" onclick="Calculadora()">Resultado</button>
+            </div>
+        </fieldset>
+        </form>
+</div>
+<script>
+    var numero1 = parseInt(document.getElementById('numero1').value);
+    var numero2 = parseInt(document.getElementById('numero2').value);
+    var resultado = 0;
+
+    function Calculadora(){
+        if (document.getElementById('suma').checked){
+            resultado = numero1 + numero2;
+            alert("El resultado es: " + resultado);
+        }
+        else if (document.getElementById('resta').checked){
+            resultado = numero1 - numero2;
+            alert("El resultado es: " + resultado);
+        }
+        else if (document.getElementById('multiplicar').checked){
+            resultado = numero1 + numero2;
+            alert("El resultado es: " + resultado);
+        }
+        else {
+            alert("Seleccione una operacion");
+        }
+    };
+</script>
+</body>
+</html>

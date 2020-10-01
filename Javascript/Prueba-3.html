@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba 3</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <nav class="nav nav-tabs mt-2">
+        <a class="nav-link" href="Prueba-1.html">Prueba 1</a>
+        <a class="nav-link" href="Prueba-2.html">Prueba 2</a>
+        <a class="nav-link" href="Prueba-3.html">Prueba 3</a>
+        <a class="nav-link" href="Prueba-4.html">Prueba 4</a>
+    </nav>
+        <fieldset>
+            <legend>Registre su nombre</legend>
+            <div class="form-group">
+                <label for="nombre">Ingrese su nombre</label>
+                <input class="form-control" id="nombre" type="text">
+            </div>
+            <div>
+                <button class="btn btn-secondary" type="reset">Reiniciar</button>
+                <button class="btn btn-primary" type="submit" id="boton" >Enviar</button>
+            </div>
+        </fieldset>
+</div>
+<br>
+<div class="container">
+    <p>Lista</p>
+    <ol id="lista">
+    </ol>
+</div>
+<script>
+    const BotonID = document.getElementById('boton');
+    const Lista = document.getElementById('lista');
+
+    let Usuario = [];
+
+    BotonID.addEventListener('click',() => {
+        const texto = document.getElementById('nombre').value;
+
+        console.log( "Usuario digitado es: " + texto);
+
+        if (texto !== ""){
+            Usuario.push(texto)
+        }else {
+            Usuario.sort();
+            pintarArray()
+        }
+        texto.value="";
+    });
+
+    const pintarArray = () => {
+
+        for (usuario of Usuario){
+            let etiqueta = document.createElement('li');
+            etiqueta.textContent = usuario;
+            Lista.appendChild(etiqueta);
+        }
+
+    };
+</script>
+</body>
+</html>

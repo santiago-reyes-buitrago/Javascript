@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba 1</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <nav class="nav nav-tabs mt-2">
+            <a class="nav-link" href="Prueba-1.html">Prueba 1</a>
+            <a class="nav-link" href="Prueba-2.html">Prueba 2</a>
+            <a class="nav-link" href="Prueba-3.html">Prueba 3</a>
+            <a class="nav-link" href="Prueba-4.html">Prueba 4</a>
+        </nav>
+        <p>
+            <script>
+                // Variables
+                var Texto = prompt('Ingrese un nombre','');
+                var Arreglo = Texto.toLowerCase().split("");
+                var Total_letras = Arreglo;
+                var reves = Texto.toLowerCase().split("").reverse();
+                var blanco = 0;
+                // Proceso
+                for (c=0;c < Total_letras.length;c++){
+                    document.write(reves[c]+",");
+                    if (reves[c] == " ") {
+                        blanco ++;
+                    }
+                }
+                document.write("<br>Total de tamaño: " + Total_letras.length);
+                document.write("<br>Espacios: " + blanco);
+            </script>
+        </p>
+    </div>
+</body>
+</html>
